@@ -5,6 +5,8 @@ VIA_ENABLE			= yes
 VIAL_ENABLE 		= yes
 
 RGBLIGHT_ENABLE		= no  # Enable keyboard 'old' RGB lightning
+RGB_MATRIX_ENABLE	= yes # Enable keyboard RGB Matrix lightning
+VIALRGB_ENABLE		= yes # RGB_MATRIX_ENABLE is required
 
 MOUSEKEY_ENABLE		= no
 # Disabled, because firmware size is to big for Pro Micros

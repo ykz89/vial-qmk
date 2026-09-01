@@ -2,7 +2,7 @@
     "name": "Kimiko",
     "vendorId": "0x7983",
     "productId": "0x4B69",
-    "lighting": "qmk_rgblight",
+    "lighting": "vialrgb",
     "matrix": {
         "rows": 10,
         "cols": 6

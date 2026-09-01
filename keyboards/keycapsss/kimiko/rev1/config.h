@@ -22,3 +22,9 @@
 #else
   #define RGBLIGHT_LIMIT_VAL 80
 #endif
+
+// RGB Matrix. `g_led_config` for rev1 lives in keyboards/keycapsss/kimiko/kimiko.c
+// Not yet available in `keyboard.json`
+#define RGB_MATRIX_LED_COUNT 60
+#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 80
+#define SPLIT_TRANSPORT_MIRROR

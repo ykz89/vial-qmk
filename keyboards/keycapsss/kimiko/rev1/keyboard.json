@@ -1,5 +1,8 @@
 {
     "keyboard_name": "Kimiko",
+    "build": {
+        "lto": true
+    },
     "manufacturer": "Keycapsss",
     "url": "https://keycapsss.com",
     "maintainer": "@ben_roe Keycapsss",
@@ -38,6 +41,12 @@
     },
     "rgblight": {
         "led_count": 60,
+        "split_count": [30, 30]
+    },
+    "rgb_matrix": {
+        "driver": "ws2812",
+        "led_count": 60,
+        "max_brightness": 80,
         "split_count": [30, 30]
     },
     "ws2812": {

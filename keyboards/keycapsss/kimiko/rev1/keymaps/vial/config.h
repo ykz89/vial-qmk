@@ -19,30 +19,29 @@
 #pragma once
 
 /* Select hand configuration */
-#define MASTER_LEFT
+// #define MASTER_LEFT
 // #define MASTER_RIGHT
-// #define EE_HANDS
+#define EE_HANDS
 
 #define OLED_FONT_H "keyboards/keycapsss/kimiko/rev1/keymaps/vial/glcdfont.c"
 
 
-#ifdef RGBLIGHT_ENABLE
-#   define RGBLIGHT_HUE_STEP 8
-#   define RGBLIGHT_SAT_STEP 8
-#   define RGBLIGHT_VAL_STEP 8
-#   define RGBLIGHT_SLEEP       /* the RGB lighting will be switched off when the host goes to sleep */
-/*== all animations enable ==*/
-#   define RGBLIGHT_ANIMATIONS
-/*== or choose animations to save space ==*/
-// #   define RGBLIGHT_EFFECT_BREATHING
-// #   define RGBLIGHT_EFFECT_RAINBOW_MOOD
-// #   define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-// #   define RGBLIGHT_EFFECT_SNAKE
-// #   define RGBLIGHT_EFFECT_KNIGHT
-// #   define RGBLIGHT_EFFECT_CHRISTMAS
-// #   define RGBLIGHT_EFFECT_STATIC_GRADIENT
-// #   define RGBLIGHT_EFFECT_RGB_TEST
-// #   define RGBLIGHT_EFFECT_ALTERNATING
+#ifdef RGB_MATRIX_ENABLE
+/* RGB Matrix replaces the older RGBLIGHT backend.
+   `g_led_config` (60 LEDs, 30 per half) lives in keyboards/keycapsss/kimiko/kimiko.c */
+#   define RGB_MATRIX_SLEEP /* turn the LEDs off when the host goes to sleep */
+
+/* Required by SOLID_REACTIVE_WIDE: reactive effects are compiled out entirely
+   unless RGB_MATRIX_KEYPRESSES (or _KEYRELEASES) is defined. */
+#   define RGB_MATRIX_KEYPRESSES
+
+/* Effects are opt-in and each one costs flash. The Pro Micro / Elite-C image is
+   nearly full, so this list is deliberately short - add more only if
+   `make keycapsss/kimiko/rev1:vial` still reports free space. */
+#   define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
+#   define ENABLE_RGB_MATRIX_MULTISPLASH
+
+#   define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_CYCLE_LEFT_RIGHT
 #endif
 
 // If you are using an Elite C rev3 on the slave side, uncomment the lines below:
@@ -52,3 +51,4 @@
 #define VIAL_KEYBOARD_UID {0x80, 0x9F, 0xA5, 0x3D, 0x0D, 0xCD, 0x43, 0xA4}
 #define VIAL_UNLOCK_COMBO_ROWS { 0, 9 }
 #define VIAL_UNLOCK_COMBO_COLS { 0, 4 }
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
